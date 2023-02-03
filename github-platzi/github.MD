@@ -125,7 +125,7 @@ compartir lo proyectos.
 
    * git show = historia de archivo que existio.
 
-   * git diff = sirve para comparar versiones anteriores.
+   * git diff = sirve para ver los cambios realizados.
 
    * staging = es como la historia o area de preparacion y para pasar a este lo unico que debemos hacer es ponerle el add.
 
@@ -413,5 +413,281 @@ git pull origin master.
 
 * ejecutar el cambio.
 
-git push --set-upstream origin master
+git push --set-upstream origin master.
 
+Por defecto, cualquier persona puede clonar o descargar el proyecto que tengamos en github siempre y cuando lo tengamos publico, pero no podran hscer commits, ni la creacion de ramas, para solucionar esto lo que debemos de hacer es añadir a una persona como nuestro colaborador en el repositorio.
+
+## Pasos:
+* en github, vista la pagina principal de repositorio.
+
+* debajo de tu nombre de repositorio, da clic en settings.
+
+* en la barra lateral izquierda da clic en Manage Access.
+
+* da clic en invite collaborator.
+
+* comienza a teclear el nombre de la persona que deseas invitar dentro del campo de busqueda. Posteriormente, da clic en algun nombre de lista de coincidencias (Add[user] to [repository]).
+
+* Aceptar la invitacion que llega al correo.
+
+## Nota:
+
+" **git clone url-del-remoto** este comando nos permite clonar el repositorio de forma local. La url puede ser HTTP o SSh, si tenemos agregado nuestra llave publica en Github".
+
+"Los archivos binarios para una mejor practica no deberian ser agregados al repositorio git"
+
+# **Pull Requests:**
+
+Usualmente en el entorno profesional se bloquea la rama master, y para poder enviar el codigo a esta rama debemos pasar primero por un *code review*, luego de que esto de apruebe lo que hacemos es unir el codigo con un marge request.
+
+Para realizar las pruebas enviamos el codigo a servidores llamados *staging develop (servidores de pruebas)* luego de realizar las pruebas adecuadas estos pasan al servidor de produccion *merge request*
+
+ los PR(pull requests) son la base de la colaboracion a proyectos Open Sourse(proyectos de codigo abierto), por lo general es forkear el proyecto, implementar el cambio en una nueva rama, hacer el PR y esperar que los administradores del proyecto hagan merge o pidan algun cambio en el codigo o commits que se hicieron.
+
+ ## **Proceso para realizar un pull request.**
+
+ * Un pull request es un estado intermedio antes de enviar el merge.
+
+ * el pull request permite que otro miembros del equipo revisen el codigo y asi aprobar el merge a la rama.
+
+ * permite a las personas que no forman el equipo, trabajar y colaborar con una rama.
+
+* la persona que tiene la responsabilidad de aceptar los pull request y hacer los merge tienen un perfil especial y son llamado DevOps.
+
+ 
+El pull request es una funcionalidad de GitHub, en la que un colaborador pide que revisen sus cambios antes de hacer merge a una rama normalmente es la principal(main).
+
+Al hacer el pull se puede entablar una conversacion con los usuario y mirar si se rechazan o no los cambios realizados.
+
+## **Pasos para realizar un pull request**
+
+* Se trabaja en una rama paralela los cambios que se desean.
+
+git checkout -b <rama>.
+
+* Se hace commit a la rama
+
+git commit -am "<comentario>"
+
+* Se suben al remoto los cambios 
+
+git push origin <rama>
+
+* En GitHub se hace el pull request comparando la rama master con la rama del fix-type
+
+* Uno o varios colaboradores revisan que el codigo sea correcto y dan feedback (en el chat del pull request).
+
+* El colaborador hace los cambios que sea en la rama y lo vuelve a subir al remoto(automaticamente jala la historia de los cambios que se hagan en la rama, en remoto).
+
+* Se aceptan los cambios en GitHub.
+
+* Se hace merge a master desde GitHub
+
+# **FORK**
+Cuando queremos participar en un proyecto que existe pero no tenemos permisos para escribir en el lo que hacemos en **bifucarlo** (hacer un "fork"), que consiste en crear una copia completa del repositorio bajo nuestro control, el cual podremos manejar a nuestra manera.
+
+a la hora de bifucarlo lo que hacemos es ir a la pagina del proyecto y desde esta apretar el boton **fork**, depues clonaremos el repositorio con el **git clone** para tenerlo en nuestro escritorio, para que todo se fusiones lo que hacemos es un **pull request** esperando que se realice el **merge** con el original.
+
+Para traer los cambios del repositorio forkeado agregamos una nueva fuente remota:
+
+git remote add upstream url-repositorio.
+
+luego traemos los cambios del original para actualizar en el repositorio forkeado:
+
+git pull upstream master (traemos cambios del repositorio original)
+
+git push origin master (enviamos cambios a nuestro repositorio forkeado)
+
+# Deploy
+
+Es un proceso que permite enviar al servidor uno o varios archivos, este servido puede ser de prueba, desarrollo o produccion.
+
+## **Pasos para realizarlo.**
+
+* Entrar a la carpeta de los archivos del servidos.
+
+* copiar link en clone, elegir entre https o ssh del repositorio a contribuir.
+
+   * En la carpeta deseada se clona el repositorio.
+
+git clone url 
+
+Deploy:
+
+* Realiza cambios y commit en guthub.
+* traer al repositorio local las actualizaciones para el servidor en la carpeta de los archivos del servidor.
+
+git pull ramaRemota main
+
+## **Ignorar Archivos en el repositorio**
+
+Comando para ocultar archivos es **.gitignore** y se inicia con un (*).
+
+No todos los archivos que agregas a un proyecto deberían ir a un repositorio. Por ejemplo, cuando tienes un archivo donde están tus contraseñas que comúnmente tienen la extensión .env o cuando te estás conectando a una base de datos; son archivos que nadie debe ver.
+
+# Pages.
+
+GitHub tiene un servicio de hosting donde podemos alojar nuestro repositorio y hacer que nuestro contenido se vea en tiempo real.
+
+
+# Rebase
+
+Es el proceso de mover o combinar una secuencia de confirmaciones en una nieva confirmacion base. la reorganizacion es muy util y se visualiza facielmente en el contecto de un flujo de trabajo de ramas de funciones.
+
+**para hacer un rebase en la rama feature de la rama master:**
+
+*git checkout feature*
+
+*git rebase master*
+
+**Para fusionar la otra rama es lo mismo:**
+
+*git checkout master.*
+
+*git rebase feature.*
+
+**//Cambiamos a la rama que queremos traer los cambios.**
+
+git checkout experiment.
+
+**//Aplicamos rebase para traer los cambios de la rama que queremos.**
+
+git rebase master.
+
+# Git Stash.
+
+El stashed nos sirve para guardar cambios para despues, esto nos sirve para guardar cambios y poder cambiar de rama sin perder el trabajo que aun no se guarda con el commit.
+
+### **git stash:** 
+Este comando guarda el trabajo del staging en una lista temporal llamada stash.
+
+*git stash*
+
+**se puede colocar un mensaje en el stash para asi diferenciar el git stash**
+
+*git stash save "mensaje identidicado"*
+
+**para recuperar ultimos cambios desde el stash:**
+
+*git stash pop*.
+
+**Aplicacion de un stash especifico y eliminarlo del stash**
+
+*git stash pop stash@{<num_stash>}*
+
+**para retomar los cambios de una posicion especifica del stash puedes utilizar el comando.**
+
+*git stash apply stash@{<num_stash>}*
+
+**para ver la lista de cambios guardados en stash y poder recuperarlos.**
+
+*git stash list*
+
+**Crear una rama para guardar el stash.**
+
+*git stash branch <nombre_de_la_rama>*
+
+**si deseas crear una rama y aplicar un stash especifico**
+
+*git stash branch nombre_rama stash*
+
+**Eliminar elementos de stash**
+
+*git stash drop.*
+
+**Pero si, en cambio, conoces el índice del stash que quieres borrar (mediante git stash list) puedes utilizar el comando:**
+
+*git stash drop stash@{<num_stash>}*
+
+
+**Si, en cambio, deseas eliminar todos los elementos del stash, puedes utilizar:**
+
+*git stash clear*
+
+
+# **GIT CLEAN:**
+
+*El comando clean actua en archivos sin seguimiento, este tipo de archivos son aquellos que se encuentran en el directorio de trabajo, pero que aun no se han añadido al indice de seguimiento de repositorio.*
+
+**git clean**
+
+*revision de archivos sin seguimiento.*
+
+**git clean --dry-run**
+
+*eliminar achivos sin seguimiento.*
+
+**git clean -f**
+
+**git log --oneline:** historial de commits.
+
+# Git Cherry-pick:
+Es un comando que permite tomar uno o varios commits de otra rama sin tener que hacer un merge(Aunque no es una buena practica).
+
+**Se ejecuta de la siguiente manera.**
+
+*git checkoutmaster*
+
+ *git cherry-pick 7ec61c0*: sirve para llamar una linea en especial.
+
+## Git Reset y Reflog: SOLO SE DEBEN USAR EN CASO DE EMERGENCIA.
+
+Git guarda los cambios aunque decidas borrarlos, y estos archivos que se eliminan los podemos volver a ver con:
+
+* git reflog
+
+muchos comandos de Git aceptan un parametro para especificar una referencia.
+
+* git checkout puedes moverte sin realizar ningun cambio.
+
+   * git checkout eff544f
+
+* git reset: Hará que el último commit sea el pasado por la ref, usar este comando sólo si sabes exactamente qué estás haciendo
+
+* git merge: Puedes hacer merge de un commit en específico, funciona igual que con una branch, pero te hace el merge del estado específico del commit mandado
+
+¿Qué pasa cuando todo se rompe y no sabemos qué está pasando? 
+
+Con **git reset HashDelHEAD** nos devolveremos al estado en que el proyecto funcionaba.
+
+**git reset --soft HashDelHEAD te mantiene lo que tengas en staging ahí.**
+
+**git reset --hard HashDelHEAD resetea absolutamente todo incluyendo lo que tengas en staging.**
+
+**Remendar commit**
+
+Remendar un commit con *amend* puede modificar el commit mas reciente(emendar) en la misma rama.
+
+**git add -A # Para hacer uso de amend los archivos deben de estar en staging
+git commit --amend # Remendar último commit**
+
+*Este comando sirve para agregar archivos nuevos o actualizar el commit anterior y no generar commits innecesarios.*
+
+# Grep y Log
+
+Para buscar, empleamos el comando **git grep color** y nos buscará en todo el proyecto los archivos en donde está la palabra color.
+
+Con **git grep -n color** nos saldrá un output el cual nos dirá en qué línea está lo que estamos buscando.
+
+Con **git grep -c color** nos saldrá un output el cual nos dirá cuántas veces se repite esa palabra y en qué archivo.
+
+Si queremos buscar cuántas veces utilizamos un atributo de HTML lo hacemos con **git grep -c "<p>"**.
+
+* git shortlog -sn: muestra cuantos commit han hecho cada miembro del equipo.
+
+* git shortlog -sn --all: muestra cuantos commit han hecho cada miembro del equipo, hasta los que han sido eliminados.
+
+* git shortlog -sn --all --no-merge: muestra cuantos commit ha hecho cada miembro, quitando los eliminados sin los merges.
+
+* git blame ARCHIVO: muestra quien hizo cada cosa línea por línea.
+
+* git COMANDO --help:
+muestra como funciona el comando.
+
+* git blame ARCHIVO
+ -Llinea_inicial,linea_final: 
+ muestra quien hizo cada cosa línea por línea, indicándole desde qué línea ver. Ejemplo -L35,50.
+
+* git branch -r: se muestran todas las ramas remotas.
+
+* git branch -a: se muestran todas las ramas, tanto locales como remotas.
