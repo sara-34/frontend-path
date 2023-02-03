@@ -149,3 +149,269 @@ cuando decides hacer experimento al generar ramas experimentales podemos trabaja
 cuando encontramos un error en la rama main nos vemos en la obligacion de crear una rama la cual nos permite hacer los cambios necesarios, cuando ya este todo listo lo que hacemos es fusionar las dos ramas y esta origina la rama master final.
 
 
+-----------------------
+
+Git reset y git rm son comandos con utilidades muy diferentes, pero se pueden llegar a confundir facilmente.
+
+## **git rm** 
+este comando nos ayuda a eliminar archivos de git sin eliminar su historial del sistemas de las versiones, lo cual nos ayuda mucho porque nos ayuda a recuperar informacion pasada antes de borrar el archivo.
+
+* **git rm --cached:** Elimina los archivos de nuestro repositorio local y del área de staging, pero los mantiene en nuestro disco duro. Básicamente le dice a Git que deje de trackear el historial de cambios de estos archivos, por lo que pasaran a un estado untracked.
+* **git rm --force:** Elimina los archivos de Git y del disco duro. Git siempre guarda todo, por lo que podemos acceder al registro de la existencia de los archivos, de modo que podremos recuperarlos si es necesario (pero debemos usar comandos más avanzados).
+
+## **git reset:** 
+
+este comando nos ayuda a volver en el tiempo pero esta no nos dejara recuperar la informacion que teniamos ya que todo sera eliminado y debemos volver a escribirla.
+
+solo debemos emplear este comando en caso de emergencia.
+
+Hay dos formas de utilizar **git reset:** con el argumento **--hard**, borrando toda la información que tengamos en el área de staging (y perdiendo todo para siempre). 
+Un poco más seguro, con el argumento **--soft**, que mantiene allí los archivos del área de staging para que podamos aplicar nuestros últimos cambios pero desde un commit anterior.
+
+### **git reset --soft:** 
+borra el historial y resgistros de git pero guarda los cambios que tengamos en staging, y lo unico que se hace es aplicar ultimas actualizaciones un nuevo commit.
+
+### **git reset --hard:** 
+borra todo.
+
+### **git reset HEAD:**
+este comando sirve para sacar archivos del area de staging, no los borra lo unico que hace es agregar los ultimos cambios y que los archivos no se envien al ultimo commit.
+
+### **git clone + url del repositorio local** 
+Este comando funciona cuando queremos bajar los cambio del repositorio a nuestro escritorio, lo cual crea una copia en nuestro escritorio y crea una base de datos en tiempo real.
+
+### **git log --stat**
+nos muestra el cambien especifico que se realizo en el archivo.
+
+
+### **git fech**
+
+Este comando permite hace traer los archivos pero no me crea una copia de estos.
+
+### **git marge:** 
+Esto nos permite fucionar la nueva rama con la rama pricipal para que asi se guarden los cambios realizados. 
+
+### **git commit -am ""**
+Automaticamente añade los cambios pero solo funciona con archivos que se les hizo add previamente.
+
+# Ramas GIT
+Las ramas de nos permite hacer cambios a nuestro proyecto sin necesidad de afectar la rama principal.
+
+- **git branch-nombre de la rama**: con este comando se genera una nueva rama.
+
+- **git checkout nombre rama**: con este comando podemos saltar de una rama a otra.
+
+- **git checkout -b rama**:
+Genera una rama y nos mueve a ella automaticamente, es decir, es la combinacion de git checkout y branch al mismo tiempo.
+
+- **git reset id-commit:**
+nos lleva a cualquier commit no importa la rama, ya que identificamos el id del tag, eliminando el historial de los commit posteriores al tag seleccionado.
+
+- **git checkout rama-o-id-commit:** nos lleva a cualquier commit sin borrar los commir posteriores al tag seleccionado.
+
+~~**"SIEMPRE GUARDAR CAMBIOS EN RAMA ANTES DE CAMBIAR A OTRA RAMA"**~~
+
+# **git marge**
+
+El comando nos permite crear un nuevo commit con la combinacion de dos ramas (La rama donde nos encontramos cuando ejecutamos el comando y la rama que indiquemos despues del comando).
+
+Siempre debemos estar en la rama pricipal antes de realizar el git marge para que todos los cambios que agregamos queden es esta. 
+
+ejemplo:
+
+* git checkout master
+  git merge cabecera
+
+otra opcion es crear un nuevo commit en la rama cabecera combinando todos los cambios de cualquier otra rama.
+
+* git checkout cabecera
+  git merge cualquier-otra-rama.
+
+# Conflictos en las ramas.
+
+los archivos con conflictos por el comando **git merge** entran en un nuevo estado que conocemos como Ubmerged. solo debemos ejecutar **git add** para pasarlos al area de staging
+y **git commit** para aplicar los cambios en el repositorio.
+
+**Lo que hacemos para solucionar el conflicto es aceotar los cambios de ultimo momento o dejarlo tal cual como esta aceptando desde el editor.**
+
+## Revertir un merge.
+
+Para cancelar un merge utilizamos en siguiente comando:
+
+* git merge --abort
+
+
+# NOTA 
+Copia de repositorio.
+
+para copiar un repositorio remoto a un repositorio local debemos utilizar el comando **git clone <url>** 
+, para enviar cambios al repositorio remoto se utiliza el **git push** para la actualizacion de repositorio local usamos **git fetch** luego lo fusionamos con **git merge**, para traer dato y fusionarlos a la vez usamos **git pull**, Para crear commits rápidamente, fusionando **git add** y **git commit -m ""**, usamos **git commit -am ""**.
+
+
+# GITHUB
+Es una plataforma que nos permite guardar repositorios es git que se podran usar como servidores remotos y donde se podran ejecutar algunos comandos de forma visual e interactiva.
+
+**README.md**: Es un archivo que viene por defecto, es muy buena practica porque no lleva a describir el proyecto que contiene el repositorio.
+
+## Clonacion de repositorio.
+
+para clonar un repositorio desde de GitHub se debe copiar la url del repositorio y ejecutar **git clone url**, esto descargara la version que se encuentra en el proyecto de gitHub.
+
+## Repositorio GutHub a decumento local.
+
+Utilizaremos **git init**
+
+* guardar la URL del repositorio de GitHub con el nombre origin 
+
+*git remote add origin URL*
+
+* verfivar si la URL se guardo correctamente.
+
+*git remote*
+
+*git remote -v*
+
+* traer la version del repositorio remoto y hacer merge para crear un commit con los archivos de ambas partes, podemos usar **git fetch** y **git merge** o solo **git pull** con el flag **--allow-unrelated-histories.**
+
+*git pull origin master --allow-unrelated-histories*
+
+* por ultimo es el **git push** para guardar cambios en nuestro repositorio local en github.
+
+*git push origin master*
+
+# Llaves Publicas y Privadas.
+
+Las llaves publicas y privadas que se conocen tambien como asimetrico de un solo camino, nos sirve para mandar mensajes privados dentro de varios nodos, ya que al firmar el mensaje como una llave publica esta esta vinculada a una llave privada con la cual podemos leer el mensaje que nos quieren transmitir.
+
+Esto nos ayuda a desifrar todos los archivos y que los podamos compartir de una manera mas segura sin el riesgo de que estos sean encontrados por hackers.
+
+## Funcionamiento.
+
+* Ambas personas deben crear su llave publica y privada.
+
+* Ambas personas podran compartir su llave publica a las otras partes.
+
+* la persona que quiere compartir un mensaje puede usar la llave publica de la otra persona para cifrar los archivos y asegurarse que solo puedan ser descifrados con la llave privada de la persona con la que queremos compartir el mensaje.
+
+* el mensaje esta cifrado y puede ser enviado a la otra persona sin problemas.
+
+* la persona por ultimo podra utilizar su llave privada para descifrar el mensaje.
+
+# SSH 
+
+La creacion de las ssh es necesario solo una vez por cada computadora, lo que hacemos agregandola a git es creando una forma de comunicarnos mas segura sin necesidad de escribir nuestro usuario y contraseña a cada comento.
+
+ssh:
+
+git remote set-url origin url-ssh-del-repositorio-en-github.
+
+ej:
+ git remote set-url origin git@github.com:sara-34/curso-profesional-git-git-hub-platzi.git
+
+ ## Comandos para copiar la llave ssh:
+**Windows**
+
+ clip < ~/.ssh/id_rsa.pub
+
+**Linux (Ubuntu):**
+
+cat ~/.ssh/id_rsa.pub
+
+**Mac:**
+
+pbcopy < ~/.ssh/id_rsa.pub
+
+
+## **Tags y Versiones Git**
+
+GitHub Desktop te permite crear etiquetas anotadas. Las etiquetas se asocian con confirmaciones, así que puedes utilizarlas para marcar un punto individual en el historial de tu repositorio, incluyendo los números de versión para un lanzamiento.
+
+en si es como tener versiones antiguas de nuestro proyectos como lo son desde el inicio.
+
+Los tags o etiquetas nos permiten asignar versiones a los commits con cambios mas importantes o significativos de nuestro proyecto.
+
+# **Comandos:**
+
+* crear un nuevo tag y asignarlo a un commmit:
+
+git tag -a nombredeltag iddelcommit.
+
+* borrar un tag del repositorio local:
+
+git tag -d nombredeltag
+
+* listar los tag de nuestro repositorio local:
+
+git tag , git show-ref --tags.
+
+* publicar un tag en el repositorio remoto:
+
+git push origin --tags.
+
+* borrar un tag del repositorio remoto:
+
+git tag -d nombredeltag y git push origin :refs/tags/nombredeltag
+
+## Nota:
+
+*Se puede poner alias* *ejemplo:*
+
+*alias arbolito="git log -all --graph --decorate --oneline"*
+
+
+git log --all --graph --decorate --oneline
+
+*Con cada codigo que* *deseemos recortar lo* *podemos agregar con* *alias.*
+
+Para llamarlo:
+
+git alias(nombre del alias).
+
+Para generar un comando complejo con varios comandos de una forma optimizada, utilizamos conjuntos de sentencias conocidas como alias.
+
+# Manejo de ramas en GitHub
+
+Las ramas nos permiten hacer cambios a nuestro archivos sin modificar la version orifinal, esto nos da la posibilidad de trabajar con ramas que nunca se envian a github 
+
+La ventaja que tiene usar ramas es que las modificaciones solo afectarán a esa rama en particular. Si luego de “guardar” los archivos(usando commit) nos movemos a otra rama (git checkout otraRama) veremos como las modificaciones de la rama pasada no aparecen en la otraRama.
+
+## **Comandos de manejo de ramas de GitHub.**
+
+* *Crear rama:*
+
+**git branch nombreRama**
+
+* *movernos a otra rama:*
+
+**git checkout nombreRama.**
+
+* *crear una rama en el repositorio local:*
+
+**git branch nombreRama**
+**git checkout -b nombreRama.**
+
+
+* *Publicar una rama local al repositorio remoto:*
+
+**git push origin nombreRama.**
+
+### *Podemos ver nuestro  entorno graficamente con  el comando:*
+
+* gitk
+
+# Colaboradores en nuestro repositorio.
+
+* Hacer commit con el nuevo mensaje que queremos:
+
+git commit -amend
+
+* corregir el mensaje.
+
+* traer el repositorio remoto.
+
+git pull origin master.
+
+* ejecutar el cambio.
+
+git push --set-upstream origin master
+
