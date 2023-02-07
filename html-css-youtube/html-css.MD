@@ -117,6 +117,136 @@ Estas son representadas por numeros.
 * Salto de linea : br
 * casillas de verificacion: type="checkbox".
 
+# Atributo value.
+Este atributo nos ayuda a expecificar que valor deseamos enviar para mirar que opcion podemos tomar, se encuentra dentro del input value="Atributo".
+
+# < Div>:
+Es un contenedor generico que nos ayuda a mantener el codigo mas ordenado para asi poderlo personalizar con css.
+
+# < Footer>:
+Pie de pagina.
+
+# < Small>:
+Texto mas pequeño.
+
+# < Head>:
+En el head van incluidas las cosas que no entran a la scena pero son escenciales.
+
+# < Title>:
+Nos permite personalizar el titulo de como aparece el documento.
+
+# CSS
+Lenguaje basado en reglas, que determinan el estilo que se aplicara a un elemento o a un grupo de elementos.
+
+Css cuenta con 3 formas para ser agregado en html.
+
+* estilos en linea: 
+Este estilo se añade directamente a la etiqueta de apertura < h1 style = color> app < /h1>.
+
+* Elemento < style>:
+Este elemento se añade en el head.
+ < head>
+    < style>
+       < h2>
+    < /style>
+< /head>.
+
+* Archivo .css:
+
+Creacion de archivos css para definir la pagina, este es vinculado desde html con < link href="nombre.css" ref="stylesheet">.
+
+## Selectores css.
+Los selectores ayudan a indicar al navegador que elemento del html sera seleccionador para utilizar en el css.
+
+**h1** 
+**p**
+**h3:** esto son algunos de los selectores los cuales nos ayudan a especificar que tipo de cambio vamos a realizar.
+
+**(*)** Este es un selector universal.
+
+**.class:** selecciona todos los elemento que tienen el atributo class.
+
+**"Cuando no queremos que varios atributos salgan con los mismos cambios lo que hacemos es colocarles una clase o id unico."**
+
+## Elementos:
+* font-size: Tamaño de fuente.
+* font-family: Fuentes.
+* fuentes: font.google.com.
+
+## Tamaño de imagenes.
+
+width: es el ancho que le queremos dar a la imagen.
+Height: Altura de la imagen.
+
+## Bordes.
+Estos son los diferentes atributos de los bordes en css.
+
+* border-width.
+* border-color.
+* border-style.
+* border-solid.
+* border-none.
+* border-dotted.
+* border-dashed.
+* border-double.
+* border-groove.
+* border-ridge.
+* border-inset.
+* border-ouset.
+* border-radius: entre mas pixeles contenga mas grandes son el circulo.
+
+## Color de fondo < div>
+* background-color: Color fondo.
+
+## ID UNICO.
+Este es representado por #.
+
+Ejemplo: #idunico.
+
+**"El id puede ser creado en cualquier selector"**
+
+# Padding:
+Es la distancia que hay dentro d eun borde y su contenido(lo que hay desde la caja hacia adentro).
+
+* padding-top = borde superior.
+* padding-right = borde derecho.
+* padding-left = borde izquierdo.
+* padding-botton = borde inferior.
+* padding = 0px 0px 0px 0px, es la representacion de todos los lados en una sola linea y el estos actuan en representacion de reloj.
+
+# Margen:
+Es lo que hay de distancia desde el borde de la caja hacia afuera, la distancia que le queremos dar a una caja de otra.
+* margin-top = borde superior.
+* margin-right = borde derecho.
+* margin-left = borde izquierdo.
+* margin-botton = borde inferior.
+* margin = 0px 0px 0px 0px, es la representacion de todos los lados en una sola linea y el estos actuan en representacion de reloj.
+
+# Selectores de atributos.
+Los elementos pueden tener atributos que proporcionan un nivel de detalles mayor sobre el elemento que delimitan, en css se pueden utilizar atributos para seleccionar elementos definidos con atributos determinados.
+
+## Selectores de presencia y valor.
+
+Estos selectores permiten seleccionar un elemento solo apartir de la presencia de un atributo o apartir de varias coincidencias diferentes respecto al valor del atributo.
+
+[attr ] a[ title]: relaciona elementos con un mismo nombre de atributo.
+
+[ attr = value ] [ href="https"]: relaciona los elementos con un mismo nombre del atributo, attr cuyo valor es exactamente el mismo.
+
+"Quitar subrayado **text-decoration=none;**"
+
+## Unidades Absolutas:
+
+* px: estas hacen que el diseño sea estatico.
+* vw: se expande al abrir la ventana y cerrarla ayuda mucho mas cuando se realiza responsi.
+* em: se ajusta relativamente al tamaño de la letra.
+
+
+
+
+
+
+
 
 
 
