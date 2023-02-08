@@ -242,6 +242,63 @@ Estos selectores permiten seleccionar un elemento solo apartir de la presencia d
 * em: se ajusta relativamente al tamaño de la letra.
 
 
+# class VS id:
+Si declaramos id y class en una sola linea codigo esto llegaria a tener un conflicto, pero el resultado mostrado seria el id ya que este contiene prioridad sobre la clase porque este es mas especifico.
+
+* id se prioriza sobre la clase.
+* class se prioriza sobre los selectores.
+
+## Prioridad de los estilos en linea.
+Para priorizar una clase por encima del que esta primordial usamos:
+* text-azul{
+   color: blue **!important**
+};
+
+
+# Codigos hexadecimales:
+
+Estos se componen de 0-9 y de a-f.
+
+* #000000: representacion de numeros hexadecimales, contienen 6 digitos pero esto se puede reducir si sus pares de repiten (eje:  #000.).
+
+* #ffffff: es el mayor valor que se puede asignar.
+
+"Se puede crear 16 millones de colores en codigo"
+
+* Fuente pagina: **color picker**
+
+# valores RGB:
+
+se utilizan numero desde 0-255, Se declara de la siguiente manera:
+
+* color = rgb(0, 0, 0);
+* transparencia = rgba(0,0,0,0);
+
+# Variables css.
+Una variable es nombre que le asignamos a un valor.
+Se declara con:
+
+--variable.
+ 
+background : var(-- variable);
+
+Valor respaldo: Funciona por si la variable queda mal escrita.
+
+background : var(-- variable color);
+
+Cuando el navegador no reconoce la variable usamos una de respaldo y esta va por encima de la variable.
+
+background : color;
+
+background : var(-- variable, color);
+
+"Se recomienda usar valores de respaldo SIEMPRE"
+
+Heredando variables.
+
+Cuando queremos utilizar la variable en especifico sin que afecte todo el body lo que hacemos es volverla a declarar donde necesitemos de nuevo.
+
+
 
 
 
