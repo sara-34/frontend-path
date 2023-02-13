@@ -3,3 +3,6 @@
 
 ### Enlace Repositorio Git.
 [GitHub]("https://github.com/sara-34/html-css-profundidad-platzi")
+
+### Enlace Repositorio Practico.
+[GitHub Practico]("https://github.com/sara-34/curso-practico-fronted-developer-html-css")
