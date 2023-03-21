@@ -1,12 +1,12 @@
 ### Recurso.
-[Platzi]("https://platzi.com/clases/2008-html-css/31053-que-vas-a-aprender-en-este-curso/").
+[Platzi](https://platzi.com/clases/2008-html-css/31053-que-vas-a-aprender-en-este-curso/).
 
 ### Repositorio GitHub Practico Acitividades
 
-[Git-Hub]("https://github.com/sara-34/curso-definitivo-html-css-platzi").
+[Git-Hub](https://github.com/sara-34/curso-definitivo-html-css-platzi).
 
 ### Repositorio Github Pagina Google.
-[Google]("https://github.com/sara-34/curso-practico-html-css-pagina-google")
+[Google](https://github.com/sara-34/curso-practico-html-css-pagina-google)
 
 
 # Frontend.
