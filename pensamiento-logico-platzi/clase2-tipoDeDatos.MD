@@ -1,7 +1,7 @@
 # Tipo de dato Texto.
 
 Consiste en un conjunto de caracteres, estos pueden ser numeros, letras, simbolos, espacios e incluso **Emojis**.
-Se les denomina como una cade de caracteres (Strings).
+Se les denomina como una cadena de caracteres (Strings).
 
 ## Como se utilizan los tipos de datos.
 En lenguajes como JavaScript, python o c++, a las cadenas de caracteres se representan con ("") o ('').
@@ -14,7 +14,7 @@ En lenguajes como JavaScript, python o c++, a las cadenas de caracteres se repre
 
    + "Nunca dejes de aprender ❤️".
 
-**Nota: Los espacios, signos o numeros tambien son caracteres porque al momento de definir que un dato es de tipo texto, entonces cada uno de sus elementos seran los caracteres.**
+**Nota: Los espacios tambien tienen valores, signos o numeros tambien son caracteres porque al momento de definir que un dato es de tipo texto, entonces cada uno de sus elementos seran los caracteres.**
 
 ## Que es la concatenacion.
 
