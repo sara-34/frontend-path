@@ -10,20 +10,20 @@ Donde se guardan los archivos que ya se encuentran listo para commit, es decir t
 
 ## Creacion de repositorio local 
 
-- git init: Inicializamos el control de versiones.
-- git status: Chequeamos el estado.
-- git add .: Añadimos y guardamos los cambios en Staging area.
-- git commit -"": Hacemos el commit.
-- git log : Revisamos el log de los commits.
-- git branch: crear y ver ramas.
-- git checkout: cambio de rama.
-- git checkout -b : cambiar y crear una nueva rama
-- git merge: mezclar los cambios de ambas ramas.
-- git remote add origin <url-repositorio-git> : Al repositorio que seran enviados los archivos.
-- git push -u origin main: enviar cambios a la rama.
-- git pull origin main: traerme los cambios de la rama. 
--git clone: clonar el repositorio.
--git remote -v: ver los repositorios a los qe se les agrega cambio(historial).
+- **git init:** Inicializamos el control de versiones.
+- **git status:** Chequeamos el estado.
+- **git add .:** Añadimos y guardamos los cambios en Staging area.
+- **git commit -"":** Hacemos el commit.
+- **git log:** Revisamos el log de los commits.
+- **git branch:** crear y ver ramas.
+- **git checkout:** cambio de rama.
+- **git checkout -b:** cambiar y crear una nueva rama
+- **git merge:** mezclar los cambios de ambas ramas.
+- **git remote add origin <url-repositorio-git>:** Al repositorio que seran enviados los archivos.
+- **git push -u origin main:** enviar cambios a la rama.
+- **git pull origin main:** traerme los cambios de la rama. 
+- **git clone:** clonar el repositorio.
+- **git remote -v:** ver los repositorios a los qe se les agrega cambio(historial).
 
 
 

@@ -16,6 +16,7 @@ cp -r: copiar carpeta y cambiarle el nombre a la copia.
 - touch: Crear archivos.
 - rim: reiniciar el computador.
 - cat archivo: deja ver el contenido del archivo.
+- npx vite dev: suelta el enlace del local host.
 
 ## Archivos.
 
