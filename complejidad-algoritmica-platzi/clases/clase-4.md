@@ -12,3 +12,4 @@ Aunque ambos resuelven el mismo problema su memoria aumenta en diferente tamaño
 
 La complejidad especial incluye el espacio auxiliar y el espacio ocupado por los datos de entrada. En el espacio auxiliar esta todos los procesos que procesa el espacio de entrada.
 
+ 
