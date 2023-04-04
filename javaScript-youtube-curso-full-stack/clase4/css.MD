@@ -50,6 +50,69 @@ Es como funciona css en general.
 - **Borde:** Es la linea entre el relleno y el margen del cuadro.
 - **Margen:** Es el espacio entre la caja y las cajas alrededor de esta.
 
+- **lorem:** Nos sirve para tener una especie de texto a la hora de realizar un ejemplo en css(texto de relleno).
+
+
+## Concideraciones del modelo de caja.
+
+- Margen en elementos en linea.
+- Colapso vertical del margen.
+- Dimensiones explicitas.
+- Tamaño de la caja box-sizing.
+
+# Selectores.
+
+- Adyacente .primero + .segundo.
+- Hijo .padre > .hijo.
+- Descendiente .abuelo .bisnieto.
+- Hermano .hermano ~ .hermana.
+
+## layout
+
+Algoritmo que determina la posicion y tamaño de cajas basado en la forma en la que interactuan con sus elementos (hermanos y padres).
+
+## **Cascada y especificidad en css.**
+
+1. **Posicion y orden:** El orden en que se declaran las reglas CSS(Siempre se agrega la regla final osea la de la ultima posicion).
+2. **Especificidad:** Un algoritmo que determia que selector de CSS tiene mas peso.
+3. **Origen:** El orden en que aparece CSS y de donde proviene ya sea un estilo de navegador, el CSS de una extension o nuestro CSS.
+4. **Importancia:**Algunas reglas CSS tienen mas peso que otras, especialmente con el tipo de regla !important (No usar no es buena practica).
+
+### Origen.
+
+1. **User agent base styles:** Estos son los estilos que su navegador aplica a los elemento HTML por defecto.
+
+2. **Local user styles:** Estos pueden provenir del nivel del sistema operativo, como un tamaño de fuente base o una preferencia de movimiento reducido. Tambien pueden provenir de extensiones de navegador.
+
+3. **Authored CSS:** El css que crea.
+
+4. **Authored !important:** Cualquier !important que agregue a sus declaraciones de autor.
+
+5. ***Local user styles !important:** Cualquier !important que provenga del nivel del sistema operativo o del nivel de extension del navegador CSS.
+
+6. **User agent !important:** Cualquier !important que esta definido en el CSS predeterminado proporcionado por el navegador.
+
+## **Importancia.**
+
+1. Reglas normales, como *font-size*, *background* o *color*.
+
+2. Reglas de animacion.
+
+3. Reglas !important(siguiendo el mismo orden que el origen).
+
+4. Reglas de transición.
+
+
+# Recursos.
+
+- [CSS](https://cssreference.io/).
+- [Web Dev](https://web.dev/learn/css/)
+- [Laboratorio](https://laboratoria.github.io/css-diner/)
+
+
+
+
+
 
 
 
