@@ -302,5 +302,31 @@ sum(2, 1);
 - **AND:** a && b && c retorna el primer valor falso.
 - **NOT:** !a retorna el valor contrario booleano.
 
+## Condicionales y ciclos.
+
+- If Statement.
+
+```
+if (age >= 18){
+    console.log("Adult");
+} else if (age >= 10){
+    console.log("Young");
+}else{
+    console.log("Baby");
+}
+```
+- Ciclo For
+```
+for (let i = 0; i < fruits.length; i++) {
+        console.log(fruits[i]);
+    
+}
+```
+
+## Propiedades del array.
+
+- array.length = Retorna la cantidad de elementos que hay en el array.
+ 
+
 
 
