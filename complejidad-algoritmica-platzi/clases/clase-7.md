@@ -52,3 +52,10 @@ console.log( generarMatriz(5))
 
 ```
 
+## Complejidades existentes.
+
+- Acceso a memoria.
+- Procesos paralelos.
+- Comparaciones.
+- Entre otros mas.
+
