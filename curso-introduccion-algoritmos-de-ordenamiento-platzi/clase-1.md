@@ -20,4 +20,4 @@ Es el algortimo de ordenamiento mas simple que hay, se llama bubble sort porque 
 
 - El bucle 2 se encarga de realizar el cambio y ordenar los elementos.
 
-**Nota: Entre mas grande sea el algoritmo o entre mas elemento tengan su tiempo de ejecucion sera mas demorado**
+**Nota: Entre mas grande sea el algoritmo o entre mas elemento tengan su tiempo de ejecucion sera mas demorado **
