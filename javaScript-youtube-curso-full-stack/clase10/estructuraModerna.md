@@ -25,5 +25,53 @@ console.log("Hola mundo");
 6. **Code splitting:** Divide el codigo en fragmentos mas pequeños que se puedan cargar segun la demanda.
 
 
+## CommonJs
+```
+helper.js
+
+function sum(a,b){
+    return a + b;
+}
+
+module.exports = sum;
+```
+
+```
+main.js
+
+const sum = require('./helper.js');
+
+const result = sumar(3,5);
+console.log(result);
+
+```
+
+## Pseudo-codigo
+
+Se crean multiples tareas para obtener nuestros archivos finales.
+
+1. index.js se concatena con utils.js
+2. blog.js se concatena con utils.js
+3. contact.js se concatena con dep1.js y dep2.js
+4. los archivos resultantes se minimanizan
+
+
+## Webpack 
+
+Con webPack solo hay que definir las entradas y salidas como queremos transformar los archivos.
+
+El unico problema es que la configuracion de webpack puede llegar a ser muy complicada, incluyendo su dev server.
+
+
+## Vite como alternativa a WebPack.
+
+- Ya tiene un dev server que funciona con es modules.
+- usa la configuracion de wollup para el bunfling.
+- para el transpirador hace uso de esbuild en vez de babel que es la opcion mas comun en webpack.
+- es practicamente zero-config.
+ 
+
+
+
 
 
